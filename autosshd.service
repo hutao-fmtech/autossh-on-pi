@@ -1,0 +1,14 @@
+[Unit]
+Description=Autossh daemon
+After=network-online.target
+
+[Service]
+Type=idle
+User=root
+WorkingDirectory=/usr/local/bin
+ExecStart=/usr/local/bin/autosshd.sh
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
